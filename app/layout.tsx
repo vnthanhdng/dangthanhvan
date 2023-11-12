@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, EB_Garamond, Merriweather, Alegreya_Sans_SC} from 'next/font/google'
+import { Navbar } from '@/components'
+
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
+const garamond = EB_Garamond({subsets: ['latin']})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Navbar/>
+      {children}
     </html>
   )
 }

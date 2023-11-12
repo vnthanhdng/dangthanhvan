@@ -1,27 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Josefin+Sans:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'EB Garamond', serif;
+  font-family: 'Merriweather', serif; */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* body {
+  width: 690px;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+/* START: General styles */
+.max-width {
+  @apply max-w-[690px] mx-auto;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.padding-x {
+  @apply sm:px-16 px-6;
+}
+
+.padding-y {
+  @apply py-4;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+/* .custom-btn {
+  @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
+} */
+/* END: General styles */
+
+
+
+.header {
+  @apply flex flex-col gap-5 relative z-0 max-w-[1440px] mx-auto;
+}
+
+.header__title {
+  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold;
+}
+
+.header__subtitle {
+  @apply text-[27px] font-light mt-5;
+}
+
+.section {
+  @apply flex flex-col gap-5 relative z-0 max-w-[1440x] mx-auto;
+}
+
+.section__title {
+  @apply xl:text-[27px] sm:text-[24px] text-[20px] font-extrabold;
+}
+
+.section__text {
+  @apply text-[20px] font-light mt-5;
 }
