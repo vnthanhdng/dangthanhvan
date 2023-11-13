@@ -4,7 +4,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <div className="header">
-      <div className="flex-1 pt-36 padding-x w-full">
+      <div className="flex-1 padding-x w-full">
         <h1 className="header__title">Welcome to my Garden!</h1>
         <p className="header__subtitle">
           I'm a freshman at Vanderbilt University.

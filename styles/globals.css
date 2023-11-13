@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  @apply font-garamond
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,11 +17,9 @@
   font-family: 'Merriweather', serif; */
 }
 
-/* body {
-  width: 690px;
-  margin-left: auto;
-  margin-right: auto;
-} */
+.body-padding {
+  @apply pt-36;
+}
 
 /* START: General styles */
 .max-width {
@@ -45,14 +47,19 @@
 } */
 /* END: General styles */
 
-
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* High z-index to ensure it's above other content */
+}
 
 .header {
   @apply flex flex-col gap-5 relative z-0 max-w-[1440px] mx-auto;
 }
 
 .header__title {
-  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold;
+  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold font-merriweather;
 }
 
 .header__subtitle {
@@ -64,9 +71,23 @@
 }
 
 .section__title {
-  @apply xl:text-[27px] sm:text-[24px] text-[20px] font-extrabold;
+  @apply xl:text-[27px] sm:text-[24px] text-[20px] font-extrabold font-merriweather;
 }
 
 .section__text {
   @apply text-[20px] font-light mt-5;
 }
+
+/* About page specific styles */
+.about-title {
+  @apply text-3xl font-bold text-gray-900;
+}
+
+.about-text {
+  @apply mt-4 text-lg text-gray-600;
+}
+
+.about-heading {
+  @apply mt-12 text-3xl font-bold text-gray-900;
+}
+
