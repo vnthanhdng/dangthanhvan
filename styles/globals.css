@@ -55,7 +55,7 @@ html{
 }
 
 .header {
-  @apply flex flex-col gap-5 relative z-0 max-w-[1440px] mx-auto;
+  @apply flex flex-col gap-5 relative z-0 max-w-[1440px] mx-auto min-h-screen;
 }
 
 .header__title {

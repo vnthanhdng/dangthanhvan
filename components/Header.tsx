@@ -7,14 +7,15 @@ const Header = () => {
       <div className="flex-1 padding-x w-full">
         <h1 className="header__title">Welcome to my Garden!</h1>
         <p className="header__subtitle">
-          I'm a freshman at Vanderbilt University.
+          I'm a 
         </p>
         <p className="header__subtitle">
-          If you want to know more about my background, check out
-        </p>
-        <Link href="/about" className="header__subtitle text-dark-purple">
+          If you want to know more about my background, check out&nbsp;
+          <Link href="/about" className="header__subtitle text-dark-purple">
           this autobiography.
         </Link>
+        </p>
+        
       </div>
       
     </div>
