@@ -6,6 +6,7 @@ const ProjectCard : React.FC<ProjectCardProps> = ({ project }) => {
     <div className="border p-4 rounded shadow hover:shadow-md transition duration-300">
       <h2 className="text-xl font-bold mb-2">{project.title}</h2>
       <p className="mb-3">{project.summary}</p>
+      <p className="mb-3">{project.status}</p>
       <div className="mb-3">
         <strong>Technologies:</strong> {project.tech.join(', ')}
       </div>

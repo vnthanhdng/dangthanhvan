@@ -7,6 +7,7 @@ export interface Project {
     github: string;
     demo?: string;
     images: string[];
+    status: string;
   }
   
 export interface ProjectCardProps {

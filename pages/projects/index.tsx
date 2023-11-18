@@ -1,8 +1,8 @@
 // pages/projects/index.tsx
 import React from 'react';
 import ProjectCard from '@/components/ProjectCard'; // A component for individual project cards
-import connectToDatabase from '../../lib/mongodb'; // Adjust the import path as necessary
 import { Project } from '@/types/Project';
+import { getProjects } from '../../services/firebaseServices';
 
 
 interface ProjectsProps{
@@ -10,22 +10,36 @@ interface ProjectsProps{
 }
 
 export async function getStaticProps() {
-  const { db } = await connectToDatabase();
-  const projects = await db.collection('projects').find({}).toArray();
-  console.log(projects);
-  return {
-    props: {
-      projects: JSON.parse(JSON.stringify(projects)),
-    },
-    revalidate: 1, // ISR - Revalidate at most once every second if there's a request
-  };
-}
+  try {
+    const projects = await getProjects();
 
+    if (!projects || projects.length === 0) {
+      console.log('No projects found. Ensure the Firestore database is populated.');
+      return { props: { projects: [] } };
+    }
+
+    return {
+      props: {
+        projects,
+      },
+      revalidate: 1,
+    };
+  } catch (error) {
+    // More detailed error logging
+    console.error('Failed to fetch projects:', error.message);
+    return {
+      props: {
+        projects: [],
+        error: 'Failed to fetch projects', // Optionally pass the error to the component
+      },
+    };
+  }
+}
 const ProjectsPage: React.FC<ProjectsProps> = ({ projects }) => {
   return (
-    <div className="container mx-auto p-4">
+    <div className="max-w[960px] padding-x">
       <h1 className="text-2xl font-bold mb-4">Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1  gap-4 padding-y">
         {projects.map((project) => (
           <ProjectCard key={project._id} project={project} />
         ))}

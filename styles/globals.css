@@ -23,7 +23,7 @@ html{
 
 /* START: General styles */
 .max-width {
-  @apply max-w-[690px] mx-auto;
+  @apply max-w-[960px] mx-auto;
 }
 
 .padding-x {
