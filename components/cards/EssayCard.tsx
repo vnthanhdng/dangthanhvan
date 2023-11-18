@@ -1,5 +1,5 @@
 import React from 'react';
-import {Essay, EssayCardProps} from '../types/Essay';
+import {Essay, EssayCardProps} from '../../types/Essay';
 
 
 const EssayCard: React.FC<EssayCardProps> = ({ essay }) => {

@@ -1,6 +1,6 @@
 // pages/projects/index.tsx
 import React from 'react';
-import ProjectCard from '@/components/ProjectCard'; // A component for individual project cards
+import ProjectCard from '@/components/cards/ProjectCard'; // A component for individual project cards
 import { Project } from '@/types/Project';
 import { getProjects } from '../../services/firebaseServices';
 

@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { getEssays } from "../../services/firebaseServices"; // Adjust path as needed
-import EssayCard from "../../components/EssayCard";
+import EssayCard from "../../components/cards/EssayCard";
 import {Essay} from "../../types/Essay";
 
 interface GardenProps {
