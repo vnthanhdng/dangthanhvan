@@ -21,9 +21,9 @@ export const getStaticProps = async () => {
 
 const GardenPage: React.FC<GardenProps> = ({ essays }) => {
   return (
-    <div className="container mx-auto p-4">
+    <div className="section max-w-[690px]">
       <h1 className="text-2xl font-bold mb-4">Digital Garden</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1  gap-4">
         {essays.map((essay) => (
           <Link key={essay.id} href={`/garden/${essay.id}`}>
             <div>

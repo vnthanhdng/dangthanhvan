@@ -17,8 +17,11 @@ const EssayDetailPage = ({}) => {
       if (!router.isReady) return;
       
       const db = getFirestore(app);
+      console.log('No such document!');
       const essayRef = doc(db, 'essays', essayId);
+      console.log('No such document!');
       const essaySnap = await getDoc(essayRef);
+
 
       if (essaySnap.exists()) {
         setEssay({ id: essaySnap.id, ...essaySnap.data() as Essay });

@@ -25,8 +25,7 @@ export async function getStaticProps() {
       revalidate: 1,
     };
   } catch (error) {
-    // More detailed error logging
-    console.error('Failed to fetch projects:', error.message);
+    if (error instanceof Error) {console.error('Failed to fetch projects:', error.message);}
     return {
       props: {
         projects: [],
@@ -37,7 +36,7 @@ export async function getStaticProps() {
 }
 const ProjectsPage: React.FC<ProjectsProps> = ({ projects }) => {
   return (
-    <div className="max-w[960px] padding-x">
+    <div className="section max-w-[690px]">
       <h1 className="text-2xl font-bold mb-4">Projects</h1>
       <div className="grid grid-cols-1  gap-4 padding-y">
         {projects.map((project) => (
