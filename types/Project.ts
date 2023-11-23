@@ -8,6 +8,7 @@ export interface Project {
     demo?: string;
     images: string[];
     status: string;
+    diary: string;
   }
   
 export interface ProjectCardProps {

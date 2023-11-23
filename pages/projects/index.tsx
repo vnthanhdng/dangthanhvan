@@ -3,6 +3,7 @@ import React from 'react';
 import ProjectCard from '@/components/cards/ProjectCard'; // A component for individual project cards
 import { Project } from '@/types/Project';
 import { getProjects } from '../../services/firebaseServices';
+import Link from "next/link";
 
 
 interface ProjectsProps{
@@ -40,7 +41,11 @@ const ProjectsPage: React.FC<ProjectsProps> = ({ projects }) => {
       <h1 className="text-2xl font-bold mb-4">Projects</h1>
       <div className="grid grid-cols-1  gap-4 padding-y">
         {projects.map((project) => (
+          <Link key={project._id} href={`/projects/${project._id}`}>
+          <div>
           <ProjectCard key={project._id} project={project} />
+          </div>
+          </Link>
         ))}
       </div>
     </div>
